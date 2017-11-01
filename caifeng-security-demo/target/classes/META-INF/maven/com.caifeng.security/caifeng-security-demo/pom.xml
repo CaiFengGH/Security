@@ -1,0 +1,86 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>caifeng-security-demo</artifactId>
+	
+	<parent>
+		<groupId>com.caifeng.security</groupId>
+		<artifactId>caifeng-security</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+		<relativePath>../caifeng-security</relativePath>
+	</parent>
+  
+	<dependencies>
+		<dependency>
+			<groupId>com.caifeng.security</groupId>
+			<artifactId>caifeng-security-browser</artifactId>
+			<version>${caifeng.security.version}</version>
+		</dependency>
+		<!--引入spring的测试框架  -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+		</dependency>
+		<!-- spring-boot启动失败添加的包 -->
+		<dependency>
+	        <groupId>org.springframework.boot</groupId>
+	        <artifactId>spring-boot-starter-tomcat</artifactId>
+	        <scope>provided</scope>
+		</dependency>
+		<!--解决return类型转换成json的问题  -->
+		<dependency>
+		    <groupId>com.fasterxml.jackson.core</groupId>
+		    <artifactId>jackson-databind</artifactId>
+		    <version>2.8.10</version>
+		</dependency>
+		<dependency>
+		    <groupId>com.fasterxml.jackson.core</groupId>
+		    <artifactId>jackson-core</artifactId>
+		    <version>2.8.10</version>
+		</dependency>
+		<dependency>
+		    <groupId>com.fasterxml.jackson.core</groupId>
+		    <artifactId>jackson-annotations</artifactId>
+		    <version>2.8.10</version>
+		</dependency>
+		<!--Aspect添加包  -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-aop</artifactId>			
+		</dependency>
+		<!--swagger添 访问http://localhost:8060/swagger-ui.html -->
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>2.7.0</version>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>2.7.0</version>
+		</dependency>
+		<!--wireMock请求-->
+		<dependency>
+			<groupId>com.github.tomakehurst</groupId>
+	        <artifactId>wiremock</artifactId>
+		</dependency>
+	</dependencies>
+	
+	<!-- 按照SpringBoot将项目打包 -->
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>1.3.3.RELEASE</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+		<finalName>demo</finalName>
+	</build>
+</project>

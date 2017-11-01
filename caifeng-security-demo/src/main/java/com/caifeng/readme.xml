@@ -1,0 +1,12 @@
+1:redirect_uri is illegal 用户确认授权后，服务提供商提供授权码时回跳的地址，
+与将用户导向的地址为同一个地址，网站回调域的地址和请求的地址前后不一致
+a-修改host文件，保持域名相同
+b-//SocialAuthenticationFilter中的默认的url进行配置
+
+2:5-5开发QQ登录34分钟代码缺省
+
+3:第三方微信登录
+
+4:session管理
+a-session out和无用户权限的细分
+b-session竞争，后面代替前面登录
